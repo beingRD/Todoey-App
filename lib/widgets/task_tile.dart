@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'task_checkbox.dart';
 
 class TaskTile extends StatelessWidget {
   TaskTile({this.title});
@@ -14,10 +15,7 @@ class TaskTile extends StatelessWidget {
           fontSize: 20.0,
         ),
       ),
-      trailing: Checkbox(
-        value: false,
-        onChanged: (bool newValue) {},
-      ),
+      trailing: TaskCheckbox(),
     );
   }
 }
