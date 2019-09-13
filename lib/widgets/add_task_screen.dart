@@ -3,44 +3,57 @@ import 'package:flutter/material.dart';
 class AddTaskScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: 40.0,
-        vertical: 40.0,
+    return Container(
+      decoration: BoxDecoration(
+        color: Color(0xFF757575),
       ),
-      child: Column(
-        children: <Widget>[
-          Text(
-            'Add Task',
-            style: TextStyle(
-              color: Colors.lightBlueAccent,
-              fontSize: 26.0,
-            ),
+      child: Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: 30.0,
+          vertical: 10.0,
+        ),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20.0),
+            topRight: Radius.circular(20.0),
           ),
-          TextFormField(
-            decoration: InputDecoration(
-              focusColor: Colors.lightBlueAccent,
+          color: Colors.white,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            SizedBox(
+              height: 30.0,
             ),
-          ),
-          SizedBox(
-            height: 30.0,
-          ),
-          FlatButton(
-            padding: EdgeInsets.symmetric(
-              horizontal: 145.0,
-              vertical: 20.0,
-            ),
-            onPressed: () {},
-            child: Text(
-              'Add',
+            Text(
+              'Add Task',
               style: TextStyle(
-                fontSize: 20.0,
+                color: Colors.lightBlueAccent,
+                fontSize: 30.0,
               ),
+              textAlign: TextAlign.center,
             ),
-            color: Colors.lightBlueAccent,
-            textColor: Colors.white,
-          ),
-        ],
+            TextFormField(
+              autofocus: true,
+              textAlign: TextAlign.center,
+              decoration: InputDecoration(),
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            FlatButton(
+              onPressed: () {},
+              child: Text(
+                'Add',
+                style: TextStyle(
+                  fontSize: 20.0,
+                ),
+              ),
+              color: Colors.lightBlueAccent,
+              textColor: Colors.white,
+            ),
+          ],
+        ),
       ),
     );
   }
