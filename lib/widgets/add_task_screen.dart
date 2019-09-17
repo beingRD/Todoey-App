@@ -50,7 +50,7 @@ class AddTaskScreen extends StatelessWidget {
             ),
             FlatButton(
               onPressed: () {
-                Provider.of<TaskData>(context).addTaskData(newTaskTitle);
+                Provider.of<TaskData>(context).addTask(newTaskTitle);
                 Navigator.pop(context);
               },
               child: Text(
