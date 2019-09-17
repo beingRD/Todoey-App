@@ -4,12 +4,7 @@ import 'package:todoey/models/task_data.dart';
 import 'package:todoey/widgets/tasks_list.dart';
 import 'widgets/add_task_screen.dart';
 
-class TasksScreen extends StatefulWidget {
-  @override
-  _TasksScreenState createState() => _TasksScreenState();
-}
-
-class _TasksScreenState extends State<TasksScreen> {
+class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,12 +15,8 @@ class _TasksScreenState extends State<TasksScreen> {
         onPressed: () {
           showModalBottomSheet(
             context: context,
-            builder: (context) => AddTaskScreen((newTaskTitle) {
-              // setState(() {
-              //   tasks.add(Task(name: newTaskTitle));
-              // });
-              Navigator.pop(context);
-            }),
+            builder: (context) => AddTaskScreen(),
+            // Navigator.pop(context);
           );
         },
       ),
@@ -89,7 +80,7 @@ class _TasksScreenState extends State<TasksScreen> {
                 padding: EdgeInsets.only(
                   top: 60.0,
                 ),
-                child: TasksList(Provider.of<TaskData>(context).tasks),
+                child: TasksList(),
               ),
             ),
           ),
