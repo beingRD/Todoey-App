@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 
-class Task {
+class Task extends ChangeNotifier{
   final String name;
   bool isDone;
 
