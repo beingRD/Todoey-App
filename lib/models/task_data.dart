@@ -1,20 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'task.dart';
+import 'dart:collection';
 
 class TaskData extends ChangeNotifier {
-  List<Task> tasks = [
+  List<Task> _tasks = [
     Task(name: 'Buy Milk'),
     Task(name: 'Buy Eggs'),
     Task(name: 'Buy Bread'),
   ];
 
   get taskCount {
-    return tasks.length;
+    return _tasks.length;
+  }
+
+  //Safety measures so that it can't be accessed from other classes
+  UnmodifiableListView<Task> get tasks {
+    return UnmodifiableListView(_tasks);
   }
 
   addTaskData(String taskTitile) {
-    Task task = Task(name: taskTitile);
-    tasks.add(task);
+    final task = Task(name: taskTitile);
+    _tasks.add(task);
     notifyListeners();
   }
 }
